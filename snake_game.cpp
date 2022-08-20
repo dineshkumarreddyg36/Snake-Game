@@ -39,7 +39,7 @@ void Update()
                 cout << "O";
             else if (i == fruitY && j == fruitX)
                 cout << "F";
-            else if(i == foodSpecx && j == foodSpecy)
+            else if(nTail%4==0 && nTail>0 && i==foodSpecy && j==foodSpecx)
  			{
                	cout << "S";
 			 }
@@ -131,8 +131,6 @@ void Logic()
     default:
         break;
     }
-    //if (x > width || x < 0 || y > height || y < 0)
-    //  gameOver = true;
     if (x >= width) x = 0; else if (x < 0) x = width - 1;
     if (y >= height) y = 0; else if (y < 0) y = height - 1;
  
@@ -147,7 +145,7 @@ void Logic()
         fruitY = rand() % height;
         nTail++;
     }
-    if (x == foodSpecx && y == foodSpecy)
+    else if (x == foodSpecx && y == foodSpecy)
     {
         score += 15;
         foodSpecx = rand() % width;
@@ -160,10 +158,10 @@ int main()
     Init();
     while (!gameOver)
     {
+    	Input();
+    	Logic();
         Update();
-        Input();
-        Logic();
-        Sleep(10); //sleep(10);
+        Sleep(75); //sleep(10);
     }
     return 0;
 }
