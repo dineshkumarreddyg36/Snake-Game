@@ -36,12 +36,12 @@ void Update()
             if (j == 0)
                 cout << "#";
             if (i == y && j == x)
-                cout << "O";
+                cout << "0";
             else if (i == fruitY && j == fruitX)
-                cout << "F";
+                cout << "*";
             else if(nTail%4==0 && nTail>0 && i==foodSpecy && j==foodSpecx)
  			{
-               	cout << "S";
+               	cout << "$";
 			 }
             else
             {
